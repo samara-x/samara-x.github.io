@@ -1,7 +1,6 @@
 function toggleDarkMode() {
   document.body.classList.toggle("dark-mode");
 }
-
 const timelineItems = document.querySelectorAll(".timeline-item");
 
 const observer = new IntersectionObserver(
