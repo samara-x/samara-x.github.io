@@ -121,7 +121,7 @@ header button {
   }
 
   header .mobile-header .hamburger-icon {
-    display: none;
+    display: flex;
   }
 }
 
