@@ -1,7 +1,7 @@
 # Samara - Portfolio Task
 
 ​
-[My portfolio site]
+https://samara-x.github.io/
 ​
 
 ## Project Requirements
