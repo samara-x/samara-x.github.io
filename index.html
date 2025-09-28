@@ -1,100 +1,149 @@
-<!-- index.html -->
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Samara's Portfolio</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Samara's Portfolio</title>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
-  <!-- this is the link to my stylesheet - make sure its named correct -->
-  <link rel="stylesheet" href="./style.css">
-</head>
-
-<body>
-  <!-- Dark mode toggle button -->
-  <button class="dark-toggle" onclick="toggleDarkMode()">Toggle Mode</button>
-
-
-  <!-- HERO SECTION -->
-  <header class="fade-in">
-
-    <div class="hero-title">
-      <h2>Hi I'm</h2>
-      <H1>Samara</H1>
-      <p>Innovator, Change Leader & Developer</p>
-      <a href="#projects" class="cta-button">Explore My Work</a>
-      <img src="images/Samara_profile_long.png" alt="Samara in a field of wildflowers" class="hero-img">
+  <body>
+    <header>
+      <div class="mobile-header">
+        <img src="images/Samara_profile.png" alt="logo area" class="logo" />
+        <button type="button" class="hamburger-button">
+          <img
+            class="hamburger-icon"
+            src="./img/hamburger.svg"
+            alt="Three horizontal lines, positioned one above the other."
+          />
+        </button>
+      </div>
+      <nav class="desktop-nav" aria-label="Primary">
+        <ul>
+          <li>
+            <a href="myprojects.html">My Projects</a>
+          </li>
+          <li>
+            <a href="aboutme.html">About Me</a>
+          </li>
+          </li>
+            <a href="">Contact</a>
+          </li>
+        </ul>
+      </nav>
+      <nav class="mobile-nav display-none" aria-label="Primary">
+        <ul>
+          <li>
+            <a href="">My Projects</a>
+          </li>
+          <li>
+            <a href="">About Me</a>
+          </li>
+          <li>
+            <a href="">Contact</a>
+          </li>
+          </li>
+        </ul>
+      </nav>
+    </header>
+    <section class="hero">
+      <h3>Hi I'm</h3>
+      <h1>Samara</h1>
+      <h4>an innovator, leader & maybe one day a developer</h3>
+      <a href="aboutme.html" class="btn-primary">Get to know me</a>
+    <img src="images/Samara_profile_long.png" alt="Samara in a field of wildflowers" class="hero-img">
     </div>
-
-  </header>
-  <section>
-    <!-- brain -->
-    <section id="brain" class="brain-section">
-      <h2 class="fade-in-section">My Mind at Work</h2>
-      <div id="brain-container" class="brain-container fade-in-section"></div>
-      <p class="fade-in-section">
-        This interactive brain highlights the areas I engage for coding, change management, creativity, and emotional
-        intelligence.
-      </p>
     </section>
-
-    <!-- PROJECTS SECTION -->
-    <section id="projects" class="projects">
-      <div class="project-card slide-up">
-        <h3>Project One</h3>
-        <p>Brief description of your project and the tools used.</p>
-      </div>
-      <div class="project-card slide-up">
-        <h3>Project Two</h3>
-        <p>Brief description of your project and the tools used.</p>
-      </div>
-      <div class="project-card slide-up">
-        <h3>Project Three</h3>
-        <p>Brief description of your project and the tools used.</p>
-      </div>
+    <section class="articles-container">
+      <article>
+        <img
+          class="icon"
+          src="./img/tools.svg"
+          alt="A wrench and a screwdriver, lying crossed over one another diagonally"
+        />
+        <h2>1 Day Workshops</h2>
+        <p>
+          Whether you're interested in coding as a career, or just looking to
+          see what it's all about, our free one day workshops are the perfect
+          starting point.
+        </p>
+        <a href="#" class="btn-primary">Apply</a>
+      </article>
+      <article>
+        <img
+          class="icon"
+          src="./img/lightning.svg"
+          alt="A jagged lightning bolt, thick at the top and sharp at the bottom"
+        />
+        <h2>1 Week Flash</h2>
+        <p>
+          Discover the fundamentals of tech in just one week. Flash is a one
+          week taster program, aimed at teaching you the basics of the key
+          emerging fields in tech.
+        </p>
+        <a href="#" class="btn-primary">Apply</a>
+      </article>
+      <article>
+        <img
+          class="icon"
+          src="./img/plus.svg"
+          alt="A plus sign formed by a horizontal line intersecting a vertical line"
+        />
+        <h2>6 Month Plus</h2>
+        <p>
+          She Codes Plus is a program providing an alternate pathway within
+          tech. The Plus program is perfect for you if your desire is to enter a
+          tech career.
+        </p>
+        <a href="#" class="btn-primary">Apply</a>
+      </article>
     </section>
-
-    <div class="timeline-item">
-      <div class="timeline-dot">💻</div>
-      <div class="timeline-label">
-        <h3>Currently</h3>
-        <p>working</p>
-      </div>
-    </div>
-
-    <div class="timeline-item">
-      <div class="timeline-dot">📈</div>
-      <div class="timeline-label">
-        <h3>Challenging myself</h3>
-        <p>Started Coding: HTML, CSS, JavaScript</p>
-      </div>
-    </div>
-
-    <div class="timeline-item">
-      <div class="timeline-dot">🧠</div>
-      <div class="timeline-label">
-        <h3>Seeking Opportunities</h3>
-        <p>Sfhjfhlkjheflk</p>
-      </div>
-    </div>
-
-    <div class="timeline-item">
-      <div class="timeline-dot">🧠</div>
-      <div class="timeline-label">
-        <h3>Seeking Opportunities</h3>
-        <p>Sfhjfhlkjheflk</p>
-      </div>
-    </div>
-
-    <!-- FOOTER SECTION -->
+    <!-- Contact Form -->
+    <section class="contact-form">
+      <h2>Get in touch</h2>
+      <form>
+        <label for="your-name">Your Name</label>
+        <input type="text" id="your-name" />
+        <label for="city">Your City</label>
+        <select name="city-selection" id="city">
+          <option value="Brisbane">Brisbane</option>
+          <option value="Perth">Perth</option>
+          <option value="Moon">The Moon</option>
+        </select>
+        <label for="message">Your Message</label>
+        <textarea name="message-text" id="message" rows="10"></textarea>
+        <input type="submit" value="Submit" />
+      </form>
+    </section>
     <footer>
-      <p>Let's work together! Connect with me on <a href="#" class="footer-link">LinkedIn</a> or <a href="#"
-          class="footer-link">GitHub</a>.</p>
+      <a
+        href="https://au.linkedin.com/in/samara-downey-014087a3?original_referer=https%3A%2F%2Fwww.google.com%2F"
+        title="Link to Samara's LinkedIn"
+      >
+        <img
+          class="socials-icon"
+          src="images/LI-In-Bug.png"
+          alt="The LinkedIn logo: the letters 'in' in white, inside a blue square"
+        />
+      </a>
+      <a
+        href="https://join.slack.com/t/shecodesaus/shared_invite/enQtNzQ3ODk1OTQzODc3LTQ2ZWFmNzM0NjE1MjA0NTI3YjJkMWMyYWVjMDU3ZThhODJmMTk4YmRjZGMzZDRhZDBhODQwNzdlYmJhNDg1YjE"
+      >
+        <img
+          class="socials-icon"
+          src="./img/slack.svg"
+          alt="The Slack logo: a colourful deconstructed hashtag"
+        />
+      </a>
+      <a href="https://github.com/SheCodesAus/">
+        <img
+          class="socials-icon"
+          src="images/github.svg"
+          alt="The Github logo: a black circle with the silhouette of a white cat, with one tentacle arm"
+        />
+      </a>
     </footer>
-
-
-    <script src="script.js"></script>
-</body>
-
+  </body>
 </html>
