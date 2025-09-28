@@ -4,11 +4,11 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Nanum+Pen+Script&display=swap");
 
 :root {
-  --brand: #1d3448;
-  --action: #f58cd3;
+  --brand: #13bee0;
+  --action: #278cb7;
   --white: #ffffff;
-  --base-light: #2e95cd;
-  --base-dark: #0c2942;
+  --base-light: #1b6990;
+  --base-dark: #0b2b47;
   --black: #111111;
 }
 
@@ -17,7 +17,7 @@
 =========================== */
 html {
   box-sizing: border-box;
-  font-size: 16px; /* ✅ FIXED: valid font-size for responsiveness */
+  font-size: 16px;
   font-family: "Montserrat", sans-serif;
   color: var(--black);
   scroll-behavior: smooth;
@@ -34,7 +34,7 @@ h2,
 h4,
 h5,
 h6 {
-  font-family: "Montserrat", sans-serif; /* ✅ FIXED: removed stray comma */
+  font-family: "Montserrat", sans-serif;
 }
 
 body,
@@ -64,7 +64,7 @@ input,
 button,
 textarea,
 select {
-  font-family: "Montserrat", sans-serif; /* ✅ FIXED: correct font spelling */
+  font-family: "Montserrat", sans-serif;
 }
 
 /* ===========================
@@ -94,9 +94,8 @@ select {
   transform: translateY(-4px);
 }
 
-/* ===========================
-   Header
-=========================== */
+/*
+Header*/
 header .mobile-header {
   padding: 16px;
   display: flex;
@@ -171,7 +170,7 @@ header button {
    Hero Section
 =========================== */
 .hero {
-  background-color: var(--brand);
+  background-color: white;
   padding: 56px 16px;
   border-radius: 10px;
   margin: 5px 10px;
@@ -182,9 +181,10 @@ header button {
   text-align: center; /* Ensure text is centered for multi-line content */
   min-height: 50vh; /* Optional: Makes the hero section at least half the viewport height */
 }
+
 .hero h1 {
   font-size: 8rem;
-  margin-bottom: 24px;
+  margin-bottom: ;
   color: var(--white);
 }
 
