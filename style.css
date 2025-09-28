@@ -1,5 +1,5 @@
 /* ===========================
-   Base HTML Styles
+Base HTML Styles
 =========================== */
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Nanum+Pen+Script&display=swap");
 
@@ -13,7 +13,7 @@
 }
 
 /* ===========================
-   CSS Reset
+CSS Reset
 =========================== */
 html {
   box-sizing: border-box;
@@ -68,14 +68,14 @@ select {
 }
 
 /* ===========================
-   Utilities
+Utilities
 =========================== */
 .display-none {
   display: none;
 }
 
 /* ===========================
-   Components
+Components
 =========================== */
 
 /* Primary Button */
@@ -167,10 +167,10 @@ header button {
 }
 
 /* ===========================
-   Hero Section
+Hero Section
 =========================== */
 .hero {
-  background-color: white;
+  background-color: rgb(255, 255, 255);
   padding: 56px 16px;
   border-radius: 10px;
   margin: 5px 10px;
@@ -179,18 +179,17 @@ header button {
   justify-content: center; /* Center content vertically */
   align-items: center; /* Center content horizontally */
   text-align: center; /* Ensure text is centered for multi-line content */
-  min-height: 50vh; /* Optional: Makes the hero section at least half the viewport height */
+  min-height: 50vh; /* Makes the hero section at least half the viewport height */
 }
 
 .hero h1 {
   font-size: 8rem;
   margin-bottom: ;
-  color: var(--white);
+  color: #d2d5d5;
 }
 
-/* ✅ FIXED: moved outside media query so it applies on mobile too */
 .hero h3 {
-  font-size: 1.8rem;
+  font-size: 6rem;
   font-family: "Nanum Pen Script", cursive;
   color: var(--action);
   margin-bottom: 16px;
@@ -206,13 +205,13 @@ header button {
   }
 
   .hero h1 {
-    font-size: 3.5rem;
+    font-size: 2rem;
     max-width: 70%;
   }
 }
 
 /* ===========================
-   Articles Section
+Articles Section
 =========================== */
 @media (min-width: 768px) {
   .articles-container {
@@ -311,9 +310,7 @@ article p {
   }
 }
 
-/* ===========================
-   Footer
-=========================== */
+/*Footer*/
 footer {
   padding: 16px;
   text-align: center;
