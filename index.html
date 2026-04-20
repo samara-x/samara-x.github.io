@@ -1,130 +1,222 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Samara's Portfolio</title>
-    <link rel="stylesheet" href="./style.css" />
-  </head>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Samara Downey — Dev Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&family=Nanum+Pen+Script&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style2.css" />
+</head>
+<body>
 
-  <body>
-    <header>
-      <div class="mobile-header">
-        <h3>DEV PORTFOLIO</h>
-        <button type="button" class="hamburger-button">
-          <img
-            class="hamburger-icon"
-            src="./img/hamburger.svg"
-            alt="Three horizontal lines, positioned one above the other."
-          />
-        </button>
-      </div>
-      <nav class="desktop-nav" aria-label="Primary">
-        <ul>
-          <li>
-            <a href="myprojects.html">My Projects</a>
-          </li>
-          <li>
-            <a href="aboutme.html">About Me</a>
-          </li>
-        </ul>
-      </nav>
-      <nav class="mobile-nav display-none" aria-label="Primary">
-        <ul>
-          <li>
-            <a href="myprojects.html">My Projects</a>
-          </li>
-          <li>
-            <a href="aboutme.html">About Me</a>
-          </li>
-          </li>
-        </ul>
-      </nav>
-    </header>
-    <section class="hero">
-      <h3>Hi I'm</h3>
-      <h1>SAMARA</h1>
-      <a href="aboutme.html" class="btn-primary">Get to know me</a>
-    <img src="images/Samara_profile_long.png" alt="Samara in a field of wildflowers" class="hero-img">
+  <nav id="navbar">
+    <div class="nav-logo">DEV PORTFOLIO</div>
+    <div class="nav-links" id="navLinks">
+      <a href="#about">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#projects">Projects</a>
+      <a href="#experience">Experience</a>
+      <a href="#contact">Contact</a>
     </div>
-    </section>
-    <section class="articles-container">
-      <article>
-        <img
-          class="icon"
-          src="#"
-          alt="insert alt text here for icon"
-        />
-        <h2>Photography</h2>
-        <p>
-          My creative spark comes from being a long time lover of having a camera in hand and taking time cpature moments and the beauty around us
-        </p>
-        <a href="https://www.pincarniephotography.com/" class="btn-primary">view</a>
-      </article>
-      <article>
-        <img
-          class="icon"
-          src="images/shecodesicon.png"
-          alt="SheCodes logo in yellow and purple text"
-        />
-        <h2>Learning</h2>
-        <p>
-          Currently undertaking the SheCodes Plus six-month
-        full-stack development course, where I’m attempting to build a
-        strong foundation in HTML, CSS, JavaScript, React, and backend
-        technologies.
-        </p>
-        <a href="#" class="btn-primary">projects</a>
-      </article>
-      <article>
-        <img
-          class="icon"
-          src="images/lightning.svg"
-          alt="A plus sign formed by a horizontal line intersecting a vertical line"
-        />
-        <h2>Topic 3</h2>
-        <p>
-          Section saved for when my brain begins to function again and I can think about something else on here or add a super cool thing
-        </p>
-        <a href="README.md" class="btn-primary">Read Me</a>
-      </article>
-    </section>
-    <!-- Contact Form -->
-    <section class="contact-form">
-      <h2>Get in touch</h2>
-      <form>
-        <label for="your-name">Your Name</label>
-        <input type="text" id="your-name" />
-        <label for="city">Your City</label>
-        <select name="city-selection" id="city">
-          <option value="Brisbane">Brisbane</option>
-          <option value="Perth">Perth</option>
-          <option value="Moon">The Moon</option>
-        </select>
-        <label for="message">Let's chat!</label>
-        <textarea name="message-text" id="message" rows="10"></textarea>
-        <input type="submit" value="Submit" />
-      </form>
-    </section>
-    <footer>
-      <a
-        href="https://au.linkedin.com/in/samara-downey-014087a3?original_referer=https%3A%2F%2Fwww.google.com%2F"
-        title="Link to Samara's LinkedIn"
-      >
-        <img
-          class="socials-icon"
-          src="images/LI-In-Bug.png"
-          alt="The LinkedIn logo: the letters 'in' in white, inside a blue square"
-    />
+    <button class="mobile-menu-btn" aria-label="Toggle menu" onclick="document.getElementById('navLinks').classList.toggle('open')">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <!-- ── Hero ── -->
+  <section class="hero">
+  <!-- Decorative brain illustration (top-right) -->
+    <svg class="hero-brain" viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <g fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round">
+        </g>
+    </svg>
+    <div class="bubble-layer">
+      <div class="thought-bubble tb-dark" style="top:50%; right:8%;  --dur:10s; --delay:0s;">🚂 rail industry leader</div>
+      <div class="thought-bubble tb-dark" style="top:66%; left:6%;   --dur:9s;  --delay:0.8s;">📷 photographer at heart</div>
+      <div class="thought-bubble tb-dark" style="top:69%; right:13%;  --dur:12s; --delay:1.6s;">🌏 Brisbane, Australia</div>
+      <div class="thought-bubble tb-rose" style="top:55%; left:29%;  --dur:8s;  --delay:2.4s;">🧠 busy brain</div>
+      <div class="thought-bubble tb-dark" style="top:50%; left:6%;   --dur:11s; --delay:3.2s;">🤝 team builder &amp; mentor</div>
+      <div class="thought-bubble tb-dark" style="top:74%; left:20%; --dur:10s; --delay:4s;">🚀 She Codes Plus 2025</div>
+      <div class="thought-bubble tb-rose" style="top:43%; right:30%;  --dur:13s; --delay:4.8s;">💡 change management nerd</div>
+      <div class="thought-bubble tb-dark" style="top:58%; right:28%; --dur:9s;  --delay:5.6s;">⚡ full-stack curious</div>
+      <div class="thought-bubble tb-dark" style="top:88%; right:22%; --dur:11s; --delay:6.4s;">✨ creative problem solver</div>
+      <div class="thought-bubble tb-dark" style="top:45%; left:28%;  --dur:10s; --delay:7.2s;">🌸 wildflower lover</div>
+    </div>
+    <div class="hero-content">
+      <p class="hero-greeting">Hi i'm</p>
+      <h1>Samara</h1>
+      </div>
+    <div class="hero-image-wrap">
+      <img src="/images/Samara_profile_long.png" alt="Samara standing in a field of wildflowers, smiling and looking to the side" />
+    </div>
+    </div>
+  </section>
+
+  <!-- ──
+      <p class="hero-sub">Leader and curious developer. Aiming to build meaningful, user-focused digital experiences.</p>
+      <div class="hero-cta">
+        <a href="#about" class="btn-primary">Get to Know Me</a>
+        <a href="#projects" class="btn-outline">My Projects</a>
+  
+  ── -->
+
+  <hr class="section-divider" />
+
+  <!-- ── About ── -->
+  <section class="section reveal" id="about">
+    <p class="section-label">About Me</p>
+    <h2 class="section-title">Hello! <em>nice to meet you</em></h2>
+    <div class="about-grid">
+      <div class="about-text">
+        <p>A people-first leader turned developer in progress. With 9+ years in mining and rail, I currently lead as a Superintendent at BHP, where I focus on lifting standards, shaping culture, and getting teams genuinely operating at their best.</p>
+        <p>I care about intent, execution, and building things that actually work. The <strong>She Codes Plus</strong> six-month full-stack development course, has given me a foundation in HTML, CSS, JavaScript, React, and Django. I bring <strong>curiosity, creativity, and determination</strong> to every project.</p>
+        <p>When I'm not coding or leading teams, you'll find me with a camera in hand - I previously ran my own photography business, <strong>Pincarnie Photography</strong>, and still love capturing the beauty around me. 📷</p>
+      </div>
+      <div class="about-highlights">
+        <div class="highlight-card"><span class="h-icon">🚀</span><span class="h-number">9+</span><span class="h-label">Years in Rail</span></div>
+        <div class="highlight-card"><span class="h-icon">👩‍💻</span><span class="h-number">5+</span><span class="h-label">Tech Skills</span></div>
+        <div class="highlight-card"><span class="h-icon">👥</span><span class="h-number">13</span><span class="h-label">Team Members Led</span></div>
+        <div class="highlight-card"><span class="h-icon">📷</span><span class="h-number">15+</span><span class="h-label">Years Photography</span></div>
+      </div>
+    </div>
+  </section>
+
+  <hr class="section-divider" />
+
+  <!-- ── Skills ── -->
+  <section class="section reveal" id="skills">
+    <p class="section-label">My Toolkit</p>
+    <h2 class="section-title">Skills <em>from She Codes Plus & beyond</em></h2>
+    <p class="section-intro">Building a full-stack foundation — from semantic markup to REST APIs — blending technical learning with years of leadership experience.</p>
+    <div class="skills-grid">
+      <div class="skill-card" style="--card-accent:#e34c26;"><span class="skill-emoji">🏗️</span><h3>HTML</h3><p>Semantic, accessible markup</p></div>
+      <div class="skill-card" style="--card-accent:#264de4;"><span class="skill-emoji">🎨</span><h3>CSS</h3><p>Responsive layouts & animations</p></div>
+      <div class="skill-card" style="--card-accent:#f0db4f;"><span class="skill-emoji">⚡</span><h3>JavaScript</h3><p>Dynamic, interactive experiences</p></div>
+      <div class="skill-card" style="--card-accent:#61dafb;"><span class="skill-emoji">⚛️</span><h3>React</h3><p>Component-driven UIs</p></div>
+      <div class="skill-card" style="--card-accent:#092e20;"><span class="skill-emoji">🐍</span><h3>Django</h3><p>Full-stack Python web apps</p></div>
+      <div class="skill-card" style="--card-accent:#3776ab;"><span class="skill-emoji">🐍</span><h3>Python</h3><p>Data & backend logic</p></div>
+    </div>
+  </section>
+
+  <hr class="section-divider" />
+
+  <!-- ── Projects ── -->
+  <section class="section reveal" id="projects">
+    <p class="section-label">Selected Work</p>
+    <h2 class="section-title">Projects <em>things I've built</em></h2>
+    <p class="section-intro">From concept to code — documenting my progress through She Codes Plus and beyond.</p>
+    <div class="projects-grid">
+      <div class="project-card">
+        <div class="project-thumb"><span class="p-number">01</span></div>
+        <div class="project-body">
+          <h3>Portfolio Website</h3>
+          <p>This site! Coded to showcase my coding journey, my busy brain, and everything I've learnt in She Codes Plus.</p>
+          <div class="project-tags"><span>HTML</span><span>CSS</span><span>JavaScript</span></div>
+        </div>
+      </div>
+    <div class="project-card">
+        <div class="project-thumb"><span class="p-number">02</span></div>
+        <div class="project-body">
+          <h3>Kickit</h3>
+          <!-- TODO: tweak description to match what Kickit actually does -->
+          <p>A collaborative build with the Owl-gorithms team for She Codes Plus — my first multi-developer project, practising Git branching, code reviews, and a shared design system.</p>
+          <div class="project-tags"><span>HTML</span><span>CSS</span><span>Team Project</span></div>
+          <div class="project-links">
+            <a href="https://kickit-au.netlify.app/" class="btn-project btn-project--primary" target="_blank" rel="noopener">View Live</a>
+            <a href="https://github.com/SheCodesAus/Owl-gorithms-frontend" class="btn-project btn-project--outline" target="_blank" rel="noopener">Code<span class="arrow" aria-hidden="true">↗</span></a>
+          </div>
+        </div>
+      </div>
+      <div class="project-card">
+        <div class="project-thumb"><span class="p-number">03</span></div>
+        <div class="project-body">
+          <h3>FundingFour</h3>
+          <!-- TODO: replace with your own sentence about FundingFour -->
+          <p>A crowdfunding platform where users can browse campaigns and pledge support for the ones they love. Built with React, exploring component state, routing, and integrating with a REST API.</p>
+          <div class="project-tags"><span>HTML</span><span>CSS</span><span>JavaScript</span><span>React</span></div>
+          <div class="project-links">
+            <a href="https://reliable-speculoos-b89ba1.netlify.app/" class="btn-project btn-project--primary" target="_blank" rel="noopener">View Live</a>
+            <a href="https://github.com/samara-x/crowdfunding-frontend" class="btn-project btn-project--outline" target="_blank" rel="noopener">Code<span class="arrow" aria-hidden="true">↗</span></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <hr class="section-divider" />
+
+  <!-- ── Experience ── -->
+  <section class="section reveal" id="experience">
+    <p class="section-label">Career Journey</p>
+    <h2 class="section-title">Experience <em>where I've been</em></h2>
+    <p class="section-intro">From track technician to superintendent — a career built on leadership, safety, and driving change.</p>
+    <div class="timeline">
+      <div class="timeline-item">
+        <h3>Superintendent Operational Readiness — Training</h3>
+        <div class="t-company">BHP, Perth WA</div>
+        <div class="t-date">December 2024 – Present</div>
+        <p>Leading a team of 13, driving culture transformation, managing vendor contracts, and delivering training programs aligned with operational timelines.</p>
+      </div>
+      <div class="timeline-item">
+        <h3>Lead Change | Change Specialist</h3>
+        <div class="t-company">BHP, Perth WA</div>
+        <div class="t-date">May 2023 – December 2024</div>
+        <p>Embedding change using ADKAR methodology, facilitating workshops, stakeholder engagement, and 1:1 coaching to build team capability.</p>
+      </div>
+      <div class="timeline-item">
+        <h3>Rail Network Coordinator</h3>
+        <div class="t-company">BHP, Perth WA</div>
+        <div class="t-date">Earlier Role</div>
+        <p>Managing daily rail operations, coordinating with maintenance teams and rail control, responding to incidents in real time.</p>
+      </div>
+      <div class="timeline-item">
+        <h3>Track Technician / Logistics Coordinator</h3>
+        <div class="t-company">BHP, Pilbarra WA</div>
+        <div class="t-date">Earlier Career</div>
+        <p>Hands-on track inspections, maintenance, safety documentation, and logistics coordination across teams and contractors.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Contact ── -->
+  <section class="contact-section reveal" id="contact">
+    <p class="section-label">Let's Connect</p>
+    <h2 class="section-title">Say <em>Hello</em></h2>
+    <p>I'm always open to new opportunities, collaborations, or just a chat about tech, rail, or photography.</p>
+    <div class="contact-links">
+      <a href="mailto:samara_downey@hotmail.com" class="contact-link">
+        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+        Email
       </a>
-      <a href="https://github.com/samara-x">
-        <img
-          class="socials-icon"
-          src="images/github.svg"
-          alt="The Github logo: a black circle with the silhouette of a white cat, with one tentacle arm"
-        />
+      <a href="https://au.linkedin.com/in/samara-downey-014087a3" class="contact-link" target="_blank">
+        <svg fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+        LinkedIn
       </a>
-    </footer>
-  </body>
+      <a href="https://github.com/samara-x" class="contact-link" target="_blank">
+        <svg fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+        GitHub
+      </a>
+      <a href="https://www.pincarniephotography.com/" class="contact-link" target="_blank">
+        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 9a2 2 0 012-2h.93a2 2 0 001.664-.89l.812-1.22A2 2 0 0110.07 4h3.86a2 2 0 011.664.89l.812 1.22A2 2 0 0018.07 7H19a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2V9z"/><circle cx="12" cy="13" r="3"/></svg>
+        Photography
+      </a>
+    </div>
+  </section>
+
+  <footer>
+    <p>Previous student of <span>She Codes Plus</span> — Samara Downey 2025</p>
+  </footer>
+
+  <script>
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('visible'); });
+    }, { threshold: 0.1 });
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+    window.addEventListener('scroll', () => {
+      document.getElementById('navbar').classList.toggle('scrolled', window.scrollY > 20);
+    });
+  </script>
+</body>
 </html>

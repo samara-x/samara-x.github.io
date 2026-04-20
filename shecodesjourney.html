@@ -1,0 +1,959 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Samara Downey — Developer Portfolio · SheCodes Plus 2025</title>
+<meta name="description" content="A 6-month development showcase portfolio documenting Samara Downey's journey through the SheCodes Plus 2025 program — from Python fundamentals to full-stack React + Django applications." />
+<style>
+  /* ---------- Reset & base ---------- */
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --bg:     #fbf7f3;   /* warm ivory */
+    --bg-2:   #f5ede4;   /* soft cream */
+    --card:   #ffffff;
+    --card-2: #fdf6ef;
+    --line:   #ebe2d6;   /* pale stone */
+    --text:   #3d3a3a;   /* warm charcoal */
+    --muted:  #8a847e;   /* soft taupe */
+    --accent:   #e8a9b6; /* blush pink */
+    --accent-2: #c9b6e4; /* soft lavender */
+    --accent-3: #a8c9b8; /* sage */
+    --gold:     #e6c89b; /* warm peach */
+    --radius: 18px;
+    --shadow: 0 20px 50px -24px rgba(120, 90, 100, .25);
+  }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Inter, Roboto, Helvetica, Arial, sans-serif;
+    background: radial-gradient(1100px 700px at 5% -10%, #f7e4ea 0%, transparent 60%),
+                radial-gradient(900px 700px at 100% 5%, #eae1f3 0%, transparent 55%),
+                radial-gradient(800px 600px at 80% 100%, #e4efe8 0%, transparent 60%),
+                var(--bg);
+    color: var(--text);
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+  }
+  img { max-width: 100%; display: block; }
+  a { color: var(--accent); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+
+  .container { max-width: 1180px; margin: 0 auto; padding: 0 28px; }
+
+  /* ---------- Nav ---------- */
+  nav.top {
+    position: sticky; top: 0; z-index: 50;
+    background: rgba(251, 247, 243, .8);
+    backdrop-filter: blur(14px);
+    border-bottom: 1px solid var(--line);
+  }
+  nav.top .inner {
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 14px 28px; max-width: 1180px; margin: 0 auto;
+  }
+  nav.top .brand {
+    font-weight: 700; letter-spacing: .4px;
+    background: linear-gradient(90deg, #c98ea0, #a488c9);
+    -webkit-background-clip: text; background-clip: text; color: transparent;
+  }
+  nav.top ul { list-style: none; display: flex; gap: 22px; flex-wrap: wrap; }
+  nav.top a {
+    color: var(--muted); font-size: 14px; font-weight: 500;
+    text-decoration: none; transition: color .2s;
+  }
+  nav.top a:hover { color: var(--text); }
+
+  /* ---------- Hero ---------- */
+  header.hero {
+    padding: 90px 0 60px;
+    position: relative; overflow: hidden;
+  }
+  .hero-grid {
+    display: grid; grid-template-columns: 1.2fr 1fr; gap: 48px; align-items: center;
+  }
+  .eyebrow {
+    display: inline-block;
+    background: rgba(232, 169, 182, .22);
+    border: 1px solid rgba(232, 169, 182, .5);
+    color: #b77a89;
+    padding: 6px 14px; border-radius: 999px;
+    font-size: 13px; font-weight: 600; letter-spacing: .6px;
+    text-transform: uppercase; margin-bottom: 20px;
+  }
+  h1 {
+    font-size: clamp(2.4rem, 5vw, 3.8rem);
+    line-height: 1.05; font-weight: 800; letter-spacing: -1.2px;
+    margin-bottom: 18px;
+    color: #2f2c2c;
+  }
+  h1 .grad {
+    background: linear-gradient(90deg, #d29aab 0%, #a488c9 50%, #87b5a1 100%);
+    -webkit-background-clip: text; background-clip: text; color: transparent;
+  }
+  .lede { font-size: 1.15rem; color: var(--muted); max-width: 560px; margin-bottom: 28px; }
+  .cta-row { display: flex; gap: 14px; flex-wrap: wrap; }
+  .btn {
+    display: inline-flex; align-items: center; gap: 8px;
+    padding: 13px 22px; border-radius: 12px;
+    font-weight: 600; font-size: 15px;
+    transition: transform .15s, box-shadow .15s, background .2s;
+    text-decoration: none;
+  }
+  .btn-primary {
+    background: linear-gradient(90deg, #e8a9b6, #c9b6e4);
+    color: #3d3a3a;
+  }
+  .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 12px 30px -10px rgba(201, 182, 228, .55); text-decoration: none; }
+  .btn-ghost {
+    border: 1px solid var(--line); color: var(--text);
+    background: rgba(255,255,255,.65);
+  }
+  .btn-ghost:hover { background: #ffffff; text-decoration: none; }
+
+  .hero-photo {
+    border-radius: var(--radius); overflow: hidden;
+    border: 1px solid var(--line);
+    box-shadow: var(--shadow);
+    transform: rotate(-1.5deg);
+  }
+  .hero-photo img { aspect-ratio: 4/5; object-fit: cover; }
+
+  /* ---------- Stats band ---------- */
+  .stats {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+    margin: 50px 0 20px;
+  }
+  .stat {
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    padding: 22px 20px;
+    text-align: center;
+  }
+  .stat .num {
+    font-size: 2rem; font-weight: 800;
+    background: linear-gradient(90deg, #c98ea0, #87b5a1);
+    -webkit-background-clip: text; background-clip: text; color: transparent;
+  }
+  .stat .lbl { color: var(--muted); font-size: 13px; text-transform: uppercase; letter-spacing: 1px; }
+
+  /* ---------- Section ---------- */
+  section { padding: 70px 0; }
+  section.alt { background: rgba(255,255,255,.55); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+  h2 {
+    font-size: clamp(1.8rem, 3vw, 2.3rem);
+    margin-bottom: 10px; font-weight: 800; letter-spacing: -.5px;
+    color: #2f2c2c;
+  }
+  h2 .grad {
+    background: linear-gradient(90deg, #c98ea0, #a488c9);
+    -webkit-background-clip: text; background-clip: text; color: transparent;
+  }
+  .section-intro { color: var(--muted); max-width: 720px; margin-bottom: 40px; font-size: 1.05rem; }
+
+  /* ---------- Skills ---------- */
+  .skill-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 14px;
+  }
+  .skill {
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 18px;
+    transition: transform .15s, border-color .2s;
+  }
+  .skill:hover { transform: translateY(-3px); border-color: var(--accent-2); }
+  .skill h4 {
+    font-size: 13px; color: var(--muted);
+    text-transform: uppercase; letter-spacing: 1px; margin-bottom: 10px;
+  }
+  .skill-list { display: flex; flex-wrap: wrap; gap: 6px; }
+  .chip {
+    background: rgba(201, 182, 228, .22);
+    border: 1px solid rgba(201, 182, 228, .55);
+    color: #6b5a8a;
+    padding: 4px 10px; border-radius: 999px; font-size: 12px; font-weight: 500;
+  }
+  .chip.pink { background: rgba(232, 169, 182, .22); border-color: rgba(232, 169, 182, .55); color: #a86877; }
+  .chip.teal { background: rgba(168, 201, 184, .26); border-color: rgba(168, 201, 184, .6); color: #5a8a73; }
+  .chip.gold { background: rgba(230, 200, 155, .25); border-color: rgba(230, 200, 155, .6); color: #9a7a4a; }
+
+  /* ---------- Timeline ---------- */
+  .timeline {
+    position: relative;
+    padding-left: 28px;
+    border-left: 2px solid var(--line);
+  }
+  .milestone { margin-bottom: 38px; position: relative; }
+  .milestone::before {
+    content: ""; position: absolute; left: -36px; top: 6px;
+    width: 14px; height: 14px; border-radius: 50%;
+    background: linear-gradient(135deg, #e8a9b6, #c9b6e4);
+    box-shadow: 0 0 0 4px rgba(201, 182, 228, .25);
+  }
+  .milestone .month {
+    font-size: 12px; color: #7a9a88; font-weight: 700;
+    text-transform: uppercase; letter-spacing: 1.2px;
+  }
+  .milestone h3 { font-size: 1.2rem; margin: 6px 0 8px; }
+  .milestone p { color: var(--muted); font-size: .98rem; }
+
+  /* ---------- Project cards ---------- */
+  .projects {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+    gap: 22px;
+  }
+  .project {
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    overflow: hidden;
+    display: flex; flex-direction: column;
+    transition: transform .2s, border-color .2s, box-shadow .25s;
+  }
+  .project:hover {
+    transform: translateY(-5px);
+    border-color: #d4c2ec;
+    box-shadow: 0 30px 60px -30px rgba(201, 182, 228, .45);
+  }
+  .project .thumb {
+    height: 210px; position: relative; overflow: hidden;
+    background: linear-gradient(135deg, #f5ede4, #efe4f2);
+    display: flex; align-items: center; justify-content: center;
+  }
+  .project .thumb img {
+    width: 100%; height: 100%; object-fit: cover;
+  }
+  .project .thumb.placeholder {
+    background: linear-gradient(135deg, #c9b6e4, #e8a9b6);
+    color: #3d3a3a; font-size: 3rem; font-weight: 800; letter-spacing: 1px;
+  }
+  .project .thumb .tag {
+    position: absolute; top: 14px; left: 14px;
+    background: rgba(255,255,255,.85); backdrop-filter: blur(8px);
+    padding: 5px 12px; border-radius: 999px;
+    font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: .8px;
+    color: #6b5a8a;
+  }
+  .project .body { padding: 22px; display: flex; flex-direction: column; gap: 10px; flex: 1; }
+  .project h3 { font-size: 1.3rem; font-weight: 700; color: #2f2c2c; }
+  .project .summary { color: var(--muted); font-size: .95rem; flex: 1; }
+  .project .meta { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 4px; }
+  .project .features {
+    font-size: .88rem; color: var(--muted);
+    padding-left: 18px;
+  }
+  .project .features li { margin-bottom: 3px; }
+  .project .links {
+    display: flex; gap: 10px; margin-top: 8px; flex-wrap: wrap;
+  }
+  .project .links a {
+    font-size: 13px; font-weight: 600;
+    padding: 6px 12px; border-radius: 8px;
+    background: rgba(255,255,255,.6);
+    border: 1px solid var(--line);
+    color: var(--text);
+  }
+  .project .links a:hover { background: rgba(201, 182, 228, .3); text-decoration: none; }
+
+  /* ---------- Featured ---------- */
+  .featured {
+    background: linear-gradient(135deg, rgba(201, 182, 228, .18), rgba(232, 169, 182, .14));
+    border: 1px solid rgba(201, 182, 228, .55);
+    border-radius: var(--radius);
+    padding: 32px;
+    margin-bottom: 28px;
+    display: grid;
+    grid-template-columns: 1fr 1fr; gap: 32px; align-items: center;
+  }
+  .featured .media {
+    border-radius: 14px; overflow: hidden;
+    border: 1px solid var(--line); box-shadow: var(--shadow);
+  }
+  .featured .media img { aspect-ratio: 16/10; object-fit: cover; }
+  .featured .badge {
+    display: inline-block;
+    background: linear-gradient(90deg, #e6c89b, #f2d6b3);
+    color: #6b4f29;
+    padding: 4px 12px; border-radius: 999px;
+    font-size: 11px; font-weight: 800; letter-spacing: 1.2px; text-transform: uppercase;
+    margin-bottom: 12px;
+  }
+  .featured h3 { font-size: 1.9rem; margin-bottom: 10px; font-weight: 800; color: #2f2c2c; }
+  .featured p { color: var(--muted); font-size: 1rem; margin-bottom: 12px; }
+
+  /* ---------- Gallery ---------- */
+  .gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: 14px;
+    grid-auto-rows: 180px;
+  }
+  .gallery-grid figure {
+    border-radius: 14px; overflow: hidden;
+    border: 1px solid var(--line);
+    position: relative;
+    transition: transform .25s;
+  }
+  .gallery-grid figure:hover { transform: scale(1.02); }
+  .gallery-grid figure img {
+    width: 100%; height: 100%; object-fit: cover;
+  }
+  .gallery-grid figure figcaption {
+    position: absolute; bottom: 0; left: 0; right: 0;
+    padding: 10px 14px;
+    background: linear-gradient(0deg, rgba(61, 58, 58, .78), transparent);
+    font-size: 12px; color: #fbf7f3; font-weight: 500;
+  }
+  .g-big { grid-column: span 6; grid-row: span 2; }
+  .g-md  { grid-column: span 4; grid-row: span 2; }
+  .g-sm  { grid-column: span 4; grid-row: span 1; }
+  .g-lg  { grid-column: span 6; grid-row: span 1; }
+
+  /* ---------- Footer ---------- */
+  footer {
+    padding: 60px 0 40px;
+    background: var(--bg-2); border-top: 1px solid var(--line);
+    text-align: center;
+  }
+  footer .tag {
+    font-size: 14px; color: var(--muted); margin-bottom: 8px;
+  }
+  footer h3 {
+    font-size: 1.6rem; margin-bottom: 16px;
+    background: linear-gradient(90deg, #c98ea0, #87b5a1);
+    -webkit-background-clip: text; background-clip: text; color: transparent;
+  }
+  footer p { color: var(--muted); font-size: .95rem; }
+  footer .contact { margin-top: 18px; display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
+  footer .contact a { color: #a488c9; }
+
+  /* ---------- Responsive ---------- */
+  @media (max-width: 860px) {
+    .hero-grid { grid-template-columns: 1fr; }
+    .hero-photo { order: -1; max-width: 340px; margin: 0 auto; }
+    .stats { grid-template-columns: repeat(2, 1fr); }
+    .featured { grid-template-columns: 1fr; }
+    .gallery-grid { grid-template-columns: repeat(6, 1fr); grid-auto-rows: 160px; }
+    .g-big { grid-column: span 6; grid-row: span 2; }
+    .g-md  { grid-column: span 3; grid-row: span 2; }
+    .g-sm, .g-lg  { grid-column: span 3; grid-row: span 1; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ==================== NAV ==================== -->
+<nav class="top">
+  <div class="inner">
+    <div class="brand">SAMARA DOWNEY</div>
+    <ul>
+      <li><a href="#about">About</a></li>
+      <li><a href="#journey">Journey</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#featured">Featured</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#gallery">Gallery</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- ==================== HERO ==================== -->
+<header class="hero">
+  <div class="container hero-grid">
+    <div>
+      <span class="eyebrow">SheCodes Plus 2025 · Developer Portfolio</span>
+      <h1>From first <span class="grad">print("Hello")</span> to deployed full-stack apps.</h1>
+      <p class="lede">
+        A six-month immersive development program covering Python, JavaScript, React,
+        Django REST Framework, and production deployment. This portfolio is a
+        curated record of every major milestone — from Python variable exercises
+        to a deployed full-stack crowdfunding platform and a team-built collaborative bucket list app.
+      </p>
+      <div class="cta-row">
+        <a href="#featured" class="btn btn-primary">See the highlights →</a>
+        <a href="#projects" class="btn btn-ghost">View all projects</a>
+      </div>
+    </div>
+    <div class="hero-photo">
+      <img src="portfolio_assets/SheCodes2025.jpg" alt="Samara at SheCodes 2025" onerror="this.onerror=null;this.src='portfolio_assets/Samara_profile.png';"/>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="stats">
+      <div class="stat"><div class="num">6</div><div class="lbl">Months of Training</div></div>
+      <div class="stat"><div class="num">12+</div><div class="lbl">Projects Completed</div></div>
+      <div class="stat"><div class="num">7</div><div class="lbl">Python Modules</div></div>
+      <div class="stat"><div class="num">3</div><div class="lbl">Full-Stack Apps</div></div>
+    </div>
+  </div>
+</header>
+
+<!-- ==================== ABOUT ==================== -->
+<section id="about" class="alt">
+  <div class="container">
+    <h2>About <span class="grad">this portfolio</span></h2>
+    <p class="section-intro">
+      SheCodes Plus is a six-month, project-based program for women and non-binary coders
+      moving from programming fundamentals into employable full-stack skills. This portfolio
+      documents that progression — the Python foundations, the first HTML websites, the move
+      into React, the Django back-ends, and ultimately a live full-stack crowdfunding platform
+      and a team-built collaborative bucket list app presented to industry mentors.
+    </p>
+  </div>
+</section>
+
+<!-- ==================== JOURNEY ==================== -->
+<section id="journey">
+  <div class="container">
+    <h2>The <span class="grad">learning journey</span></h2>
+    <p class="section-intro">Each month built on the last — fundamentals, then structure, then interactivity, then a back-end, then a full application, then a production deployment with a team.</p>
+
+    <div class="timeline">
+      <div class="milestone">
+        <div class="month">Months 1–2 · Python Foundations</div>
+        <h3>Variables, control flow, functions, and data structures</h3>
+        <p>Core Python through guided exercises: variables, conditionals, loops, functions, lists, dictionaries, file I/O, and object-oriented programming — culminating in the Plus Weather Project (CSV parsing, date formatting, temperature statistics) validated against a full unittest suite.</p>
+      </div>
+      <div class="milestone">
+        <div class="month">Month 2 · The Web, From Scratch</div>
+        <h3>HTML, CSS and a first deployed site</h3>
+        <p>Built and shipped a personal portfolio site (<code>samara-x.github.io</code>) using semantic HTML, responsive CSS, and custom styling — the first public proof-of-life as a developer.</p>
+      </div>
+      <div class="milestone">
+        <div class="month">Month 3 · JavaScript & React</div>
+        <h3>From vanilla JS to component-based UIs</h3>
+        <p>JavaScript fundamentals (arrays, functions, DOM) followed by the React ecosystem: Vite, JSX, props, hooks, state management, and React Router. Built a React message app, a todo list, and a multi-page router tutorial.</p>
+      </div>
+      <div class="milestone">
+        <div class="month">Month 4 · Django REST Framework</div>
+        <h3>A real back-end with auth, permissions, and a PostgreSQL database</h3>
+        <p>Designed an API for a crowdfunding platform: custom user model, token authentication, fundraisers, pledges, nested serializers, permission classes, custom 404s, and deployed to Heroku with PostgreSQL.</p>
+      </div>
+      <div class="milestone">
+        <div class="month">Month 5 · Full-Stack: FundingFour</div>
+        <h3>React frontend meets Django backend — in production</h3>
+        <p>Wired a React + Vite frontend to the Django REST API: token auth via localStorage, custom hooks (<code>useAuth</code>, <code>useFundraiser</code>), a responsive UI, and a deployed site on Netlify backed by the Heroku API.</p>
+      </div>
+      <div class="milestone">
+        <div class="month">Month 6 · Capstone Group Project: KICKIT</div>
+        <h3>Built and pitched in a team of developers</h3>
+        <p>"Owl-gorithms" team delivered <strong>KICKIT</strong> — a collaborative bucket-list platform with JWT auth, Google OAuth, roles &amp; permissions, optimistic voting, invites, notifications and accessibility baked in. React 19, Tailwind v4, Django 5, PostgreSQL. Presented to industry mentors and peers.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== SKILLS ==================== -->
+<section id="skills" class="alt">
+  <div class="container">
+    <h2>Technical <span class="grad">skills</span></h2>
+    <p class="section-intro">Languages, frameworks, and tools used across the six-month program.</p>
+
+    <div class="skill-grid">
+      <div class="skill">
+        <h4>Languages</h4>
+        <div class="skill-list">
+          <span class="chip pink">Python</span>
+          <span class="chip pink">JavaScript (ES6+)</span>
+          <span class="chip pink">HTML5</span>
+          <span class="chip pink">CSS3</span>
+          <span class="chip pink">SQL</span>
+        </div>
+      </div>
+      <div class="skill">
+        <h4>Frontend</h4>
+        <div class="skill-list">
+          <span class="chip">React 18 / 19</span>
+          <span class="chip">Vite</span>
+          <span class="chip">React Router v6/v7</span>
+          <span class="chip">Tailwind CSS v4</span>
+          <span class="chip">Framer Motion</span>
+          <span class="chip">Lucide React</span>
+          <span class="chip">Custom Hooks</span>
+        </div>
+      </div>
+      <div class="skill">
+        <h4>Backend</h4>
+        <div class="skill-list">
+          <span class="chip teal">Django 5</span>
+          <span class="chip teal">Django REST Framework</span>
+          <span class="chip teal">SimpleJWT</span>
+          <span class="chip teal">Token Auth</span>
+          <span class="chip teal">PostgreSQL</span>
+          <span class="chip teal">SQLite</span>
+          <span class="chip teal">django-allauth</span>
+        </div>
+      </div>
+      <div class="skill">
+        <h4>DevOps &amp; Deployment</h4>
+        <div class="skill-list">
+          <span class="chip gold">Git / GitHub</span>
+          <span class="chip gold">Heroku</span>
+          <span class="chip gold">Netlify</span>
+          <span class="chip gold">GitHub Pages</span>
+          <span class="chip gold">Gunicorn + Nginx</span>
+          <span class="chip gold">.env / 12-factor</span>
+        </div>
+      </div>
+      <div class="skill">
+        <h4>Testing &amp; Tooling</h4>
+        <div class="skill-list">
+          <span class="chip">unittest</span>
+          <span class="chip">ESLint</span>
+          <span class="chip">Insomnia</span>
+          <span class="chip">Postman</span>
+          <span class="chip">VS Code</span>
+          <span class="chip">drawio (ERD)</span>
+        </div>
+      </div>
+      <div class="skill">
+        <h4>Collaboration</h4>
+        <div class="skill-list">
+          <span class="chip pink">Agile pairing</span>
+          <span class="chip pink">Code review</span>
+          <span class="chip pink">API spec design</span>
+          <span class="chip pink">Feature branching</span>
+          <span class="chip pink">Team demos</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== FEATURED PROJECTS ==================== -->
+<section id="featured">
+  <div class="container">
+    <h2>Featured <span class="grad">projects</span></h2>
+    <p class="section-intro">The three capstone deliverables — each a production-grade full-stack application.</p>
+
+    <!-- KICKIT -->
+    <div class="featured">
+      <div class="media">
+        <img src="portfolio_assets/kickit_presentation1.jpg" alt="KICKIT team presenting" />
+      </div>
+      <div>
+        <span class="badge">Capstone · Group Project</span>
+        <h3>KICKIT — Collaborative Bucket List</h3>
+        <p><strong>Team:</strong> Owl-gorithms · <strong>Role:</strong> Full-stack contributor</p>
+        <p>
+          A team-built platform that transforms <em>"we should do that sometime"</em> into
+          <em>"lock it in."</em> Friends, families and teams create shared bucket lists, propose items,
+          vote optimistically, and lock in what to do next — without relying on social media.
+        </p>
+        <div class="meta">
+          <span class="chip">React 19</span>
+          <span class="chip">Vite 7</span>
+          <span class="chip teal">Django 5</span>
+          <span class="chip teal">DRF + SimpleJWT</span>
+          <span class="chip teal">PostgreSQL</span>
+          <span class="chip pink">Tailwind v4</span>
+          <span class="chip gold">Google OAuth</span>
+        </div>
+        <p style="margin-top:14px;"><strong>Highlights:</strong> JWT + Google OAuth, role-based permissions (Owner / Editor / Viewer), optimistic vote UI with rollback, polled notifications, invite-link flow, emoji reactions, calendar export, accessibility-first UI.</p>
+      </div>
+    </div>
+
+    <!-- FundingFour -->
+    <div class="featured">
+      <div>
+        <span class="badge">Full-Stack · Solo</span>
+        <h3>FundingFour — Crowdfunding Platform</h3>
+        <p><strong>Role:</strong> Solo full-stack build (React frontend + Django REST backend)</p>
+        <p>
+          A lightweight, human-centred crowdfunding platform for <em>small-crowd</em> support —
+          pledging time, commitment or presence rather than money. Built on a React frontend
+          and a Django REST Framework backend with token authentication and PostgreSQL.
+        </p>
+        <div class="meta">
+          <span class="chip">React 18</span>
+          <span class="chip">Vite</span>
+          <span class="chip">React Router</span>
+          <span class="chip teal">Django REST Framework</span>
+          <span class="chip teal">Token Auth</span>
+          <span class="chip teal">PostgreSQL</span>
+          <span class="chip gold">Netlify</span>
+          <span class="chip gold">Heroku</span>
+        </div>
+        <p style="margin-top:14px;"><strong>Highlights:</strong> Sign-up + token-auth login, create / view / delete fundraisers, pledge with optional anonymity and comment, progress bar &amp; percentage complete, responsive design, custom 404, deployed frontend (Netlify) + backend (Heroku).</p>
+      </div>
+      <div class="media">
+        <img src="portfolio_assets/createpost.png" alt="FundingFour create post screenshot" onerror="this.onerror=null;this.src='portfolio_assets/login.png';" />
+      </div>
+    </div>
+
+    <!-- PRIMAL -->
+    <div class="featured">
+      <div class="media" style="background: linear-gradient(135deg, #e8a9b6, #c9b6e4); aspect-ratio: 16/10; display:flex; align-items:center; justify-content:center; color:#3d3a3a; font-weight:800; font-size:2.2rem; letter-spacing:4px;">
+        PRIMAL
+      </div>
+      <div>
+        <span class="badge">Full-Stack · Solo Extension</span>
+        <h3>PRIMAL — Calisthenics Mastery</h3>
+        <p><strong>Role:</strong> Solo full-stack build (self-directed extension project)</p>
+        <p>
+          A full-stack calisthenics progression app. Users browse skills, track sessions, build
+          workouts, mark steps as mastered, and sync progression across devices once logged in.
+          Anonymous users get a localStorage experience; authenticated users sync to PostgreSQL.
+        </p>
+        <div class="meta">
+          <span class="chip">React 18</span>
+          <span class="chip">Vite</span>
+          <span class="chip pink">Tailwind CSS</span>
+          <span class="chip teal">Django 5</span>
+          <span class="chip teal">DRF + SimpleJWT</span>
+          <span class="chip teal">PostgreSQL</span>
+          <span class="chip">Axios</span>
+        </div>
+        <p style="margin-top:14px;"><strong>Highlights:</strong> JWT auth (access + refresh), custom user model, sessions &amp; stats aggregation endpoint, saved workouts, progression API that syncs localStorage to Postgres on login, dark/light theming via Context.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== ALL PROJECTS ==================== -->
+<section id="projects" class="alt">
+  <div class="container">
+    <h2>All <span class="grad">projects</span></h2>
+    <p class="section-intro">A complete record of every deliverable — from the first Python script to the team capstone.</p>
+
+    <div class="projects">
+
+      <!-- Variable exercises -->
+      <article class="project">
+        <div class="thumb placeholder">VAR</div>
+        <div class="body">
+          <h3>Python Variable Exercises</h3>
+          <p class="summary">First steps with Python: input, casting, arithmetic, and string formatting across four guided exercises.</p>
+          <div class="meta"><span class="chip pink">Python</span><span class="chip">input()</span><span class="chip">type casting</span></div>
+          <ul class="features">
+            <li>Numeric input + sum</li>
+            <li>String concatenation &amp; templating</li>
+            <li>Foundation for all later work</li>
+          </ul>
+        </div>
+      </article>
+
+      <!-- ATBS exercises -->
+      <article class="project">
+        <div class="thumb placeholder" style="background:linear-gradient(135deg,#a8c9b8,#c9b6e4);">ATBS</div>
+        <div class="body">
+          <h3>Automate the Boring Stuff</h3>
+          <p class="summary">Foundational Python through the classic <em>Automate The Boring Stuff</em> exercises — hello world, bytes, and opposite-day string manipulation.</p>
+          <div class="meta"><span class="chip pink">Python</span><span class="chip">strings</span><span class="chip">interactive I/O</span></div>
+          <ul class="features">
+            <li>Interactive CLI with <code>input()</code> + <code>int()</code> casting</li>
+            <li>String reversal / case-flip logic</li>
+          </ul>
+        </div>
+      </article>
+
+      <!-- Conditional exercises -->
+      <article class="project">
+        <div class="thumb placeholder" style="background:linear-gradient(135deg,#e6c89b,#e8a9b6);">IF</div>
+        <div class="body">
+          <h3>Conditional Challenges</h3>
+          <p class="summary">Branching logic, comparisons, boolean operators, and nested conditionals across a graded unittest suite.</p>
+          <div class="meta"><span class="chip pink">Python</span><span class="chip">control flow</span><span class="chip">unittest</span></div>
+        </div>
+      </article>
+
+      <!-- Functions -->
+      <article class="project">
+        <div class="thumb placeholder" style="background:linear-gradient(135deg,#c9b6e4,#a8c9b8);">FN()</div>
+        <div class="body">
+          <h3>Functions Exercises</h3>
+          <p class="summary">Pure functions, arguments, return values, default params, and decomposition — verified with a full test suite.</p>
+          <div class="meta"><span class="chip pink">Python</span><span class="chip">functions</span><span class="chip">unittest</span></div>
+        </div>
+      </article>
+
+      <!-- List -->
+      <article class="project">
+        <div class="thumb placeholder" style="background:linear-gradient(135deg,#e8a9b6,#e6c89b);">[ ]</div>
+        <div class="body">
+          <h3>List Challenges</h3>
+          <p class="summary">Iteration, slicing, list comprehensions, nested lists, and algorithmic thinking over ordered data.</p>
+          <div class="meta"><span class="chip pink">Python</span><span class="chip">lists</span><span class="chip">comprehensions</span></div>
+        </div>
+      </article>
+
+      <!-- Dictionary -->
+      <article class="project">
+        <div class="thumb placeholder" style="background:linear-gradient(135deg,#a8c9b8,#e8a9b6);">{ }</div>
+        <div class="body">
+          <h3>Dictionary Challenges</h3>
+          <p class="summary">Key/value data, lookups, aggregations, JSON-like shapes, and real datasets parsed into usable structures.</p>
+          <div class="meta"><span class="chip pink">Python</span><span class="chip">dicts</span><span class="chip">data shaping</span></div>
+        </div>
+      </article>
+
+      <!-- IO -->
+      <article class="project">
+        <div class="thumb placeholder" style="background:linear-gradient(135deg,#c9b6e4,#e6c89b);">I/O</div>
+        <div class="body">
+          <h3>File I/O Challenges</h3>
+          <p class="summary">Reading, writing and parsing files — CSV, text, and JSON — as a lead-in to real-world data problems.</p>
+          <div class="meta"><span class="chip pink">Python</span><span class="chip">file I/O</span><span class="chip">CSV</span></div>
+        </div>
+      </article>
+
+      <!-- OOP -->
+      <article class="project">
+        <div class="thumb placeholder" style="background:linear-gradient(135deg,#e8a9b6,#c9b6e4);">OOP</div>
+        <div class="body">
+          <h3>Object-Oriented Programming</h3>
+          <p class="summary">Classes, instance state, methods, inheritance and composition — modelling real-world entities in code.</p>
+          <div class="meta"><span class="chip pink">Python</span><span class="chip">OOP</span><span class="chip">classes</span></div>
+        </div>
+      </article>
+
+      <!-- Weather project -->
+      <article class="project">
+        <div class="thumb placeholder" style="background:linear-gradient(135deg,#a8c9b8,#c9b6e4);">☀️</div>
+        <div class="body">
+          <h3>Plus Weather Project</h3>
+          <p class="summary">A substantial Python project parsing weather CSV data, formatting dates, converting F→C, and computing daily and overall summaries — validated against a comprehensive unittest suite.</p>
+          <div class="meta"><span class="chip pink">Python</span><span class="chip">CSV</span><span class="chip">datetime</span><span class="chip">unittest</span></div>
+          <ul class="features">
+            <li><code>format_temperature</code>, <code>convert_date</code>, <code>convert_f_to_c</code></li>
+            <li>Min / max / mean helpers</li>
+            <li>Full human-readable daily &amp; overall summary</li>
+          </ul>
+        </div>
+      </article>
+
+      <!-- my_first_website -->
+      <article class="project">
+        <div class="thumb placeholder" style="background:linear-gradient(135deg,#e6c89b,#a8c9b8);color:#3d3a3a;">HTML</div>
+        <div class="body">
+          <h3>My First Website — She Codes Clone</h3>
+          <p class="summary">A responsive HTML + CSS recreation of the She Codes landing page with a mobile hamburger nav, desktop navigation, hero section and footer.</p>
+          <div class="meta"><span class="chip pink">HTML5</span><span class="chip pink">CSS3</span><span class="chip">responsive</span><span class="chip">semantic HTML</span></div>
+        </div>
+      </article>
+
+      <!-- Personal portfolio site -->
+      <article class="project">
+        <div class="thumb">
+          <img src="portfolio_assets/Samara_profile.png" alt="Personal portfolio site" onerror="this.onerror=null;this.style.display='none';this.parentElement.classList.add('placeholder');this.parentElement.textContent='PORTFOLIO';" />
+          <span class="tag">Deployed</span>
+        </div>
+        <div class="body">
+          <h3>samara-x.github.io — Personal Site</h3>
+          <p class="summary">Multi-page personal portfolio with home, about-me, and projects pages. Deployed via GitHub Pages — the first public developer presence.</p>
+          <div class="meta"><span class="chip pink">HTML5</span><span class="chip pink">CSS3</span><span class="chip">JS</span><span class="chip gold">GitHub Pages</span></div>
+          <ul class="features">
+            <li>Multi-page structure (Home / About / Projects)</li>
+            <li>Custom styling and imagery</li>
+            <li>Downloadable resume</li>
+          </ul>
+        </div>
+      </article>
+
+      <!-- Dev website -->
+      <article class="project">
+        <div class="thumb placeholder" style="background:linear-gradient(135deg,#c9b6e4,#e8a9b6);">DEV</div>
+        <div class="body">
+          <h3>Developer Website</h3>
+          <p class="summary">A refined single-page developer presence with CV, headline and imagery — iteration two of the personal brand.</p>
+          <div class="meta"><span class="chip pink">HTML5</span><span class="chip pink">CSS3</span><span class="chip">single-page</span></div>
+        </div>
+      </article>
+
+      <!-- JS basics -->
+      <article class="project">
+        <div class="thumb placeholder" style="background:linear-gradient(135deg,#e6c89b,#c9b6e4);color:#3d3a3a;">JS</div>
+        <div class="body">
+          <h3>JavaScript Fundamentals</h3>
+          <p class="summary">Vanilla JavaScript exercises — variables, arrays, slicing, functions, and basic DOM wiring via an <code>index.html</code> shell.</p>
+          <div class="meta"><span class="chip pink">JavaScript</span><span class="chip">arrays</span><span class="chip">functions</span></div>
+        </div>
+      </article>
+
+      <!-- Simple message -->
+      <article class="project">
+        <div class="thumb placeholder" style="background:linear-gradient(135deg,#a8c9b8,#e8a9b6);">⚛</div>
+        <div class="body">
+          <h3>Simple Message — First React App</h3>
+          <p class="summary">A Vite + React starter extended into the first working React app: component composition, props, and state.</p>
+          <div class="meta"><span class="chip">React 18</span><span class="chip">Vite</span><span class="chip">JSX</span></div>
+        </div>
+      </article>
+
+      <!-- Todo -->
+      <article class="project">
+        <div class="thumb placeholder" style="background:linear-gradient(135deg,#e8a9b6,#a8c9b8);">✓</div>
+        <div class="body">
+          <h3>React Todo List</h3>
+          <p class="summary">A stateful React todo app — add, complete and remove items — the classic &ldquo;does hooks work&rdquo; milestone.</p>
+          <div class="meta"><span class="chip">React</span><span class="chip">useState</span><span class="chip">controlled forms</span></div>
+        </div>
+      </article>
+
+      <!-- React router -->
+      <article class="project">
+        <div class="thumb placeholder" style="background:linear-gradient(135deg,#c9b6e4,#a8c9b8);">⇄</div>
+        <div class="body">
+          <h3>React Router Tutorial</h3>
+          <p class="summary">Multi-page React SPA using React Router — nested routes, dynamic params, layout components, and navigation.</p>
+          <div class="meta"><span class="chip">React</span><span class="chip">React Router</span><span class="chip">SPA</span></div>
+        </div>
+      </article>
+
+      <!-- Django crowdfunding backend -->
+      <article class="project">
+        <div class="thumb placeholder" style="background:linear-gradient(135deg,#a8c9b8,#c9b6e4);">DRF</div>
+        <div class="body">
+          <h3>FundingFour — Django Backend</h3>
+          <p class="summary">A Django REST Framework API powering the FundingFour platform: custom user, fundraisers, nested pledges, token auth and permission classes.</p>
+          <div class="meta"><span class="chip teal">Django</span><span class="chip teal">DRF</span><span class="chip teal">Token Auth</span><span class="chip teal">PostgreSQL</span><span class="chip gold">Heroku</span></div>
+          <ul class="features">
+            <li>Custom user model, email + password auth</li>
+            <li>Fundraiser &amp; Pledge models with ownership rules</li>
+            <li>Endpoint to obtain token + current user</li>
+            <li>Deployed to Heroku with Postgres</li>
+          </ul>
+        </div>
+      </article>
+
+      <!-- Crowdfunding frontend (FundingFour) -->
+      <article class="project">
+        <div class="thumb">
+          <img src="portfolio_assets/createaccount.png" alt="FundingFour screenshot" onerror="this.onerror=null;this.src='portfolio_assets/login.png';" />
+          <span class="tag">Deployed · Netlify</span>
+        </div>
+        <div class="body">
+          <h3>FundingFour — React Frontend</h3>
+          <p class="summary">The React + Vite frontend that consumes the Django API: token-based login/signup, fundraiser feed, single-fundraiser pages with pledges, and a responsive layout.</p>
+          <div class="meta"><span class="chip">React</span><span class="chip">Vite</span><span class="chip">React Router</span><span class="chip">Custom Hooks</span><span class="chip gold">Netlify</span></div>
+          <ul class="features">
+            <li>Signup &amp; login with token persistence</li>
+            <li>Create fundraiser, list + detail pages</li>
+            <li>Pledge flow with anonymity &amp; comments</li>
+            <li>Custom 404, mobile-friendly layout</li>
+          </ul>
+        </div>
+      </article>
+
+      <!-- PRIMAL -->
+      <article class="project">
+        <div class="thumb placeholder" style="background:linear-gradient(135deg,#e8a9b6,#c9b6e4);font-size:1.6rem;">PRIMAL</div>
+        <div class="body">
+          <h3>PRIMAL — Calisthenics Mastery</h3>
+          <p class="summary">Full-stack calisthenics progression app. Browse skills, run sessions, save workouts and track mastery. Anonymous users use localStorage; logged-in users sync to PostgreSQL.</p>
+          <div class="meta"><span class="chip">React</span><span class="chip">Tailwind</span><span class="chip teal">Django 5</span><span class="chip teal">SimpleJWT</span><span class="chip teal">PostgreSQL</span></div>
+          <ul class="features">
+            <li>JWT auth (access + refresh + logout blacklist)</li>
+            <li>Sessions, stats, progression, saved workouts</li>
+            <li>Dark/light theme via Context</li>
+          </ul>
+        </div>
+      </article>
+
+      <!-- KICKIT frontend -->
+      <article class="project">
+        <div class="thumb">
+          <img src="portfolio_assets/kickit_homepage.png" alt="KICKIT homepage" onerror="this.onerror=null;this.src='portfolio_assets/kickit_login.png';" />
+          <span class="tag">Group Capstone</span>
+        </div>
+        <div class="body">
+          <h3>KICKIT — Frontend (Owl-gorithms)</h3>
+          <p class="summary">React 19 + Vite 7 SPA with Context + custom hooks, Tailwind v4 styling, optimistic voting, invite-flow session persistence, and polled notifications.</p>
+          <div class="meta"><span class="chip">React 19</span><span class="chip">Vite 7</span><span class="chip pink">Tailwind v4</span><span class="chip">Framer Motion</span><span class="chip">Leaflet</span></div>
+          <ul class="features">
+            <li>JWT + Google OAuth (django-allauth)</li>
+            <li>Roles: Owner / Editor / Viewer</li>
+            <li>Voting with optimistic UI + rollback</li>
+            <li>Freeze lists, invite flow, calendar export</li>
+          </ul>
+        </div>
+      </article>
+
+      <!-- KICKIT backend -->
+      <article class="project">
+        <div class="thumb">
+          <img src="portfolio_assets/kickit_listpage.png" alt="KICKIT list page" onerror="this.onerror=null;this.src='portfolio_assets/kickit_logo.png';" />
+          <span class="tag">Group Capstone</span>
+        </div>
+        <div class="body">
+          <h3>KICKIT — Backend (Owl-gorithms)</h3>
+          <p class="summary">Django 5 REST API: custom user, bucket lists, items, votes, reactions, notifications, invites and permissions — backed by PostgreSQL and SimpleJWT.</p>
+          <div class="meta"><span class="chip teal">Django 5</span><span class="chip teal">DRF</span><span class="chip teal">SimpleJWT</span><span class="chip teal">PostgreSQL</span><span class="chip gold">django-allauth</span></div>
+          <ul class="features">
+            <li>Custom User model + Google OAuth</li>
+            <li>List / Item / Vote / Reaction / Invite models</li>
+            <li>Permission-aware viewsets per role</li>
+            <li>Polled notification endpoint</li>
+          </ul>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- ==================== GALLERY ==================== -->
+<section id="gallery">
+  <div class="container">
+    <h2>Course <span class="grad">memories</span></h2>
+    <p class="section-intro">Moments from a six-month cohort — classes, team builds and the capstone presentation night.</p>
+
+    <div class="gallery-grid">
+      <figure class="g-big">
+        <img src="portfolio_assets/SheCodes25Group.png" alt="SheCodes 2025 cohort group photo" />
+        <figcaption>SheCodes 2025 — the full cohort</figcaption>
+      </figure>
+      <figure class="g-md">
+        <img src="portfolio_assets/kickit_presentation1.jpg" alt="KICKIT presentation" />
+        <figcaption>KICKIT capstone presentation</figcaption>
+      </figure>
+      <figure class="g-md">
+        <img src="portfolio_assets/kickit_presentation2.jpeg" alt="KICKIT presentation audience" />
+        <figcaption>Presenting to mentors &amp; peers</figcaption>
+      </figure>
+      <figure class="g-lg">
+        <img src="portfolio_assets/Class1.jpg" alt="In class" />
+        <figcaption>In class — Month 1</figcaption>
+      </figure>
+      <figure class="g-sm">
+        <img src="portfolio_assets/SheCodes2025.jpg" alt="SheCodes 2025" />
+        <figcaption>Cohort portrait</figcaption>
+      </figure>
+      <figure class="g-sm">
+        <img src="portfolio_assets/shecodes_BMSC.jpeg" alt="SheCodes BMSC" />
+        <figcaption>Meet-up &amp; networking</figcaption>
+      </figure>
+      <figure class="g-sm">
+        <img src="portfolio_assets/shecodes_group.png" alt="SheCodes group" />
+        <figcaption>Team day</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== FOOTER ==================== -->
+<footer>
+  <div class="container">
+    <div class="tag">Thanks for reading.</div>
+    <h3>Samara Downey</h3>
+    <p>Full-stack developer · SheCodes Plus 2025 graduate · Based in Australia</p>
+    <div class="contact">
+      <a href="mailto:sed.xx@hotmail.com">sed.xx@hotmail.com</a>
+      <a href="https://github.com/samara-x" target="_blank" rel="noopener">GitHub — samara-x</a>
+      <a href="https://reliable-speculoos-b89ba1.netlify.app/" target="_blank" rel="noopener">FundingFour (live)</a>
+    </div>
+    <p style="margin-top:22px; font-size:12px; color: var(--muted);">
+      Portfolio generated from a read-only archive of the SheCodes 2025 workspace. Original project files are untouched.
+    </p>
+  </div>
+</footer>
+
+</body>
+</html>
