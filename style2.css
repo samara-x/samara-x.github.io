@@ -380,14 +380,14 @@ footer span { color: var(--rose); font-weight: 600; }
   .contact-section { padding: 60px 24px; }
 }
  
-/* Thought bubbles: phone — keep 4, nudge them so they don't overlap text */
+/* Thought bubbles: phone — keep 5 */
 @media (max-width: 600px) {
   .thought-bubble {
     font-size: 0.58rem;
     padding: 5px 11px;
     letter-spacing: 0.3px;
   }
-  /* Hide everything except #1, #3, #4, #6 #8*/
+  /* Keep #1, #3, #4, #6, #8 — hide the rest */
   .bubble-layer > .thought-bubble:nth-child(2),
   .bubble-layer > .thought-bubble:nth-child(5),
   .bubble-layer > .thought-bubble:nth-child(7),
@@ -398,11 +398,12 @@ footer span { color: var(--rose); font-weight: 600; }
   .bubble-layer > .thought-bubble:nth-child(1) { top: 20%; right: 4%;  left: auto; }  /* 🚂 */
   .bubble-layer > .thought-bubble:nth-child(3) { top: 42%; right: 6%;  left: auto; }  /* 🌏 */
   .bubble-layer > .thought-bubble:nth-child(4) { top: 50%; left: 8%;   right: auto; } /* 🧠 */
-  .bubble-layer > .thought-bubble:nth-child(6) { top: 28%; left: 2%;   right: auto; } /* 🚀 */
-  .bubble-layer > .thought-bubble:nth-child(8) { top: 48%; left: 2%;   right: auto; } /* ⚡  */
+  .bubble-layer > .thought-bubble:nth-child(6) { top: 38%; left: 2%;   right: auto; } /* 🚀 */
+  .bubble-layer > .thought-bubble:nth-child(8) { top: 58%; right: 16%; left: auto;  /* ⚡ */                                                /* ⚡ */
+  }
 }
  
-/* Very narrow phones — keep only 2 so they never collide */
+/* Very narrow phones - keep only 2 so they never collide */
 @media (max-width: 400px) {
   .bubble-layer > .thought-bubble:nth-child(3),
   .bubble-layer > .thought-bubble:nth-child(6)
